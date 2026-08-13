@@ -1,13 +1,12 @@
 # Solução Tuguy - Rota Vital — Projeto Integrador (3º Semestre ADS)
 
-> **Última atualização:** `13/08/2026` — Semana `1` do roadmap
-> Atualize este cabeçalho a cada checkpoint semanal.
+> **Última atualização:** `13/08/2026 — Semana 1 do roadmap`
 
 Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no fluxo da Hemorrede/SUS (coleta/doação → hemocentro → estoque → hospitais). Aplicação web em **Java/Spring Boot**, com dados **exclusivamente sintéticos** (sem dados reais de doadores/pacientes — LGPD).
 
 ---
 
-## 1. Ficha do projeto
+## Ficha do Projeto
 
 | Campo | Descrição |
 |---|---|
@@ -18,23 +17,24 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 
 ---
 
-## 2. Organização da squad
+## Organização da Squad
 
 | Integrante |  Área/Papel no PI | Contato |
 |---|---|---|
 | `Vitória Gabrielly Silva` | `Líder, Desenvolvedora` | `@Vitoria-Gabrielly-DEV` |
-| `Nome` | | |
-| `Nome` | | |
-| `Nome` | | |
-| `Nome` | | |
+| `Pedro Pessoa de Albuquerque` | | |
+| `Maria Larysse Yasmin Lira` | | |
+| `Emanoel Alesandro da Silva` | | |
+| `Marcio Aureliano da Silva` | | |
+| `Dilvanir Aline Alves de Melo` | | | 
 
-- **Repositório:** `link`
-- **Ambiente/deploy:** `link`
+- **Repositório:** `https://github.com/Vitoria-Gabrielly-DEV/Tuguy-Rota-Vital`
+- **Ambiente/deploy:**
 - **Quadro de acompanhamento:** `link` (colunas: Squad | Disciplina | Entrega | Unidade | Semana prevista | Status | Dependências | Riscos | Observações)
 
 ---
 
-## 3. Status por disciplina (atualizar semanalmente)
+## Status por Disciplina (atualizar semanalmente)
 
 | Disciplina | Entrega em foco | Status | Bloqueios | Próximo passo |
 |---|---|---|---|---|
@@ -48,7 +48,7 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 
 ---
 
-## 4. Roadmap (Projeto 3)
+## Roadmap (Projeto 3)
 
 | Semana | Foco | Disciplinas | Status |
 |---|---|---|---|
@@ -65,7 +65,7 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 
 ---
 
-## 5. Entregas por unidade
+## Entregas por Unidade
 
 ### Unidade 1 (fecha semana 8–9)
 - [ ] **POO** — Spring Boot com domínio + CRUD das entidades, regras de validade, deploy inicial
@@ -85,7 +85,7 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 
 ---
 
-## 6. Riscos ativos
+## Riscos Ativos
 
 | Risco | Impacto | Mitigação em andamento |
 |---|---|---|
@@ -98,7 +98,7 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 
 ---
 
-## 7. Checkpoints de comunicação docente
+## Checkpoints de comunicação docente
 
 - Reunião quinzenal Projeto ↔ disciplinas técnicas: semanas 3, 5, 7, 9, 11, 13, 15
 - Checkpoint de integração U1: semana 8–9 | U2: semana 15–16
