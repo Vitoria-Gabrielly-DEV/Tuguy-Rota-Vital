@@ -59,7 +59,7 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 
 - **Repositório:** https://github.com/Vitoria-Gabrielly-DEV/Tuguy-Rota-Vital
 - **Ambiente/deploy:** *a definir*
-- **Quadro de acompanhamento:** `link` (colunas: Squad | Disciplina | Entrega | Unidade | Semana prevista | Status | Dependências | Riscos | Observações)
+- **Quadro de acompanhamento:** https://algs2.atlassian.net/jira/software/c/projects/PI3E3/boards/10 (colunas: Squad | Disciplina | Entrega | Unidade | Semana prevista | Status | Dependências | Riscos | Observações)
 - **Planejamento oficial:** `Planejamento_Projeto_Integrador_3.pdf`
 
 ---
