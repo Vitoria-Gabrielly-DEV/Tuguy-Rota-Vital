@@ -1,12 +1,19 @@
-# Solução Tuguy - Rota Vital — Projeto Integrador (3º Semestre ADS)
+# Rota Vital — Gestão e Distribuição de Hemocomponentes na Rede de Sangue
 
-> **Última atualização:** `13/08/2026 — Semana 1 do roadmap`
-
-Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no fluxo da Hemorrede/SUS (coleta/doação → hemocentro → estoque → hospitais). Aplicação web em **Java/Spring Boot**, com dados **exclusivamente sintéticos** (sem dados reais de doadores/pacientes — LGPD).
+> Projeto Integrador — 3º Semestre ADS · Squad **Tuguy**
+> **Última atualização:** `31/08/2026 — Entrega 01 (POO)`
 
 ---
 
-## Ficha do Projeto
+## Sobre o projeto
+
+**Rota Vital** é uma aplicação web que apoia a rede de sangue (inspirada no fluxo da Hemorrede/SUS: coleta/doação → hemocentro → estoque → hospitais) na gestão e distribuição de hemocomponentes.
+
+O sistema gerencia o estoque por tipo e componente, recebe requisições dos hospitais, aloca bolsas compatíveis priorizando a validade (FEFO), calcula rotas de distribuição respeitando a cadeia fria e as janelas de tempo, e monitora temperatura e rede em painéis.
+
+> ⚠️ O projeto utiliza **exclusivamente dados sintéticos** (sem dados reais de doadores/pacientes — LGPD). A telemetria de temperatura/GPS é simulada e a compatibilidade ABO/Rh possui finalidade **didática**, não substituindo protocolos clínicos. Não há integração com sistemas oficiais da Hemorrede.
+
+### Ficha do Projeto
 
 | Campo | Descrição |
 |---|---|
@@ -15,44 +22,53 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 | **Complexidade** | Média (escopo controlado: poucos componentes, grafo limitado, dados sintéticos). |
 | **Limites de escopo** | Só dados sintéticos; telemetria simulada; compatibilidade ABO/Rh didática; grafo de rotas limitado; sem integração com sistemas oficiais. |
 
+### Tecnologias Usadas
+
+| Camada | Tecnologia |
+|---|---|
+| Backend | Java 17+, Spring Boot |
+| Frontend | HTML, CSS, Thymeleaf |
+| Prototipação | Figma |
+| Banco de dados | *a definir* |
+| Versionamento | Git / GitHub |
+| CI/CD | *a definir* |
+
+### Como rodar o projeto
+
+> Seção obrigatória a partir da **Entrega 02**. Será preenchida assim que a aplicação Spring Boot estiver com o primeiro CRUD funcional.
+
 ---
 
-## Organização da Squad
+## Equipe
 
-| Integrante |  Área/Papel no PI | Contato |
+| Integrante | Área/Papel no PI | E-mail (@cesar.school) |
 |---|---|---|
-| `Vitória Gabrielly Silva` | `Líder, Desenvolvedora` | `@Vitoria-Gabrielly-DEV` |
-| `Pedro Pessoa de Albuquerque` | | |
-| `Maria Larysse Yasmin Lira` | | |
-| `Emanoel Alesandro da Silva` | | |
-| `Marcio Aureliano da Silva` | | |
-| `Dilvanir Aline Alves de Melo` | | | 
+| Vitória Gabrielly Silva | Líder, Desenvolvedora | `vggs@cesar.school` |
+| Pedro Pessoa de Albuquerque | Desenvolvedor | `ppan@cesar.school` |
+| Maria Larysse Yasmin Lira | Desenvolvedora | `mlylp@cesar.school` |
+| Emanoel Alesandro da Silva | Desenvolvedor | `eas3@cesar.school` |
+| Marcio Aureliano da Silva | Desenvolvedor | `maps@cesar.school` |
+| Dilvanir Aline Alves de Melo | Desenvolvedora | `dacm@cesar.school` |
+| Ana Beatriz da Costa | Desenvolvedora | `abblc@cesar.school` |
 
-- **Repositório:** `https://github.com/Vitoria-Gabrielly-DEV/Tuguy-Rota-Vital`
-- **Ambiente/deploy:**
+**Membros anteriores / que saíram do grupo:** Nenhuma alteração até o momento.
+
+---
+
+## Repositório e links úteis
+
+- **Repositório:** https://github.com/Vitoria-Gabrielly-DEV/Tuguy-Rota-Vital
+- **Ambiente/deploy:** *a definir*
 - **Quadro de acompanhamento:** `link` (colunas: Squad | Disciplina | Entrega | Unidade | Semana prevista | Status | Dependências | Riscos | Observações)
+- **Planejamento oficial:** `Planejamento_Projeto_Integrador_3.pdf`
 
 ---
 
-## Status por Disciplina (atualizar semanalmente)
-
-| Disciplina | Entrega em foco | Status | Bloqueios | Próximo passo |
-|---|---|---|---|---|
-| POO | | 🔴/🟡/🟢 | | |
-| AED | | 🔴/🟡/🟢 | | |
-| EST | | 🔴/🟡/🟢 | | |
-| SO | | 🔴/🟡/🟢 | | |
-| RSD | | 🔴/🟡/🟢 | | |
-
-🟢 no prazo · 🟡 atenção · 🔴 bloqueado/atrasado
-
----
-
-## Roadmap (Projeto 3)
+## Roadmap Geral (Projeto 3)
 
 | Semana | Foco | Disciplinas | Status |
 |---|---|---|---|
-| 1 | Kickoff do PI e organização das squads | Todas | ☐ |
+| 1 | Kickoff do PI e organização das squads | Todas | ✅ |
 | 2–3 | Modelagem do domínio e escopo de dados/algoritmos | POO, AED, RSD | ☐ |
 | 4–5 | Setup de infraestrutura e início dos algoritmos | SO, RSD, AED | ☐ |
 | 6–7 | Primeira sprint — convergência das entregas U1 | Todas | ☐ |
@@ -62,26 +78,119 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 | 14–15 | Consolidação integrada + preparação da apresentação | Todas | ☐ |
 | **16–17** | **Apresentação final e avaliação de processo/colaboração** | Todas | ☐ |
 
+---
+
+## Entregas por Disciplina
+
+> Cada disciplina tem sua própria seção abaixo, com uma subseção **por entrega**, contendo o checklist de itens pedidos e os **links diretos** dos artefatos correspondentes (documentos, protótipos, vídeos, prints). Isso garante que cada professor/monitor encontre rapidamente o material da sua matéria.
+
+### 🩸 POO (Programação Orientada a Objetos)
+
+#### Entrega 01 — 31/08 ✅
+- [x] Histórias de usuário (mínimo 7, escritas em `.md`, com detalhes de negócio) → [`docs/historias-usuario.md`](./docs/historias-usuario.md)
+- [x] Cenários de aceitação em BDD (Dado-Quando-Então) para cada história → incluídos no mesmo documento acima
+- [x] Protótipo Lo-Fi no Figma (mínimo 5 histórias) → [Acessar protótipo](https://www.figma.com/design/U21MRJxsocn9mvfMPw5yEj/Rota-Vital?node-id=0-1&p=f&t=Qi3l1zU3RWARUcw2-0)
+- [x] Screencast apresentando o protótipo, explicando cada história (áudio/legenda) → [Assistir no YouTube](https://youtu.be/VXIJSzfzIQQ)
+
+**Histórias mapeadas no protótipo:** HU08 (Login/Cadastro), HU01 (Estoque), Lista de Bolsas, Detalhe da Bolsa, Cadastro de Bolsa, Lista de Doações, Cadastro de Doação, Dashboard.
+
+#### Entrega 02 — 21/09 ☐
+- [ ] Ao menos 2 histórias implementadas (com descrição formato POST-IT em "Histórias implementadas" abaixo)
+- [ ] Commits frequentes (mínimo semanais) direto na `main`
+- [ ] Issue/bug tracker do GitHub atualizado (print anexado)
+- [ ] Screencast do sistema funcionando (uso) — link:
+- [ ] Screencast da explicação do código — link:
+
+**Histórias implementadas nesta entrega:**
+*(preencher no formato: "Como [usuário], eu gostaria de [ação], para [valor]")*
+
+#### Entrega 03 — 19/10 ☐
+- [ ] Mais 2 histórias implementadas (descrição formato POST-IT abaixo)
+- [ ] Commits frequentes (mínimo semanais)
+- [ ] Screencast do sistema funcionando com as novas histórias — link:
+- [ ] Screencast da explicação do código das novas histórias — link:
+- [ ] Issue/bug tracker atualizado (print anexado)
+
+**Histórias implementadas nesta entrega:**
+
+#### Entrega 04 — 09/11 ☐
+- [ ] Histórias restantes implementadas (mínimo 2, descrição formato POST-IT abaixo)
+- [ ] Commits frequentes (mínimo semanais)
+- [ ] Screencast do uso do sistema (ênfase nas novas histórias) — link:
+- [ ] Screencast da explicação do código — link:
+- [ ] Issue/bug tracker atualizado (print anexado)
+
+**Histórias implementadas nesta entrega:**
+
+#### Apresentação Final — 09/11 a 13/11 ☐
+- [ ] Vídeo/apresentação de até 8 min cobrindo: problema, solução, fluxo de trabalho, ferramentas, lições aprendidas, demonstração do produto — link:
 
 ---
 
-## Entregas por Unidade
+### 🧮 AED (Algoritmos e Estruturas de Dados)
 
-### Unidade 1 (fecha semana 8–9)
-- [ ] **POO** — Spring Boot com domínio + CRUD das entidades, regras de validade, deploy inicial
-- [ ] **AED** — Grafo + Dijkstra, hash de estoque, fila de prioridade (FEFO)
-- [ ] **EST** — Indicadores + análise descritiva + painel inicial
-- [ ] **SO** — Pipeline CI/CD + primeiro deploy + threads em processo real
-- [ ] **RSD** — Diagrama de topologia + requisitos de rede + protocolos/APIs definidos
+#### Unidade 1 (fecha semana 8–9) ☐
+- [ ] Grafo + Dijkstra (cálculo de rotas)
+- [ ] Hash de estoque
+- [ ] Fila de prioridade (FEFO)
+- Links dos artefatos:
 
-### Unidade 2 (fecha semana 15–16)
-- [ ] **POO** — App integrada (alocação, requisições, rotas, painéis) + testes + CI/CD
-- [ ] **AED** — Compatibilidade ABO/Rh integrada + análise de complexidade
-- [ ] **EST** — Análise probabilística (desabastecimento, descarte) + painel consolidado
-- [ ] **SO** — Arquitetura em 3 cenários + orçamento + sincronização
-- [ ] **RSD** — Benchmarking (latência/vazão/erros) + painel de rede + plano de migração
+#### Unidade 2 (fecha semana 15–16) ☐
+- [ ] Compatibilidade ABO/Rh integrada
+- [ ] Análise de complexidade
+- Links dos artefatos:
 
-> Rubricas completas de cada critério estão no documento de planejamento oficial (`Planejamento_Projeto_Integrador_3.pdf`).
+---
+
+### 📊 EST (Estatística)
+
+#### Unidade 1 ☐
+- [ ] Indicadores + análise descritiva + painel inicial
+- Links dos artefatos:
+
+#### Unidade 2 ☐
+- [ ] Análise probabilística (desabastecimento, descarte) + painel consolidado
+- Links dos artefatos:
+
+---
+
+### 🖥️ SO (Sistemas Operacionais)
+
+#### Unidade 1 ☐
+- [ ] Pipeline CI/CD + primeiro deploy
+- [ ] Threads em processo real
+- Links dos artefatos:
+
+#### Unidade 2 ☐
+- [ ] Arquitetura em 3 cenários + orçamento + sincronização
+- Links dos artefatos:
+
+---
+
+### 🌐 RSD (Redes e Sistemas Distribuídos)
+
+#### Unidade 1 ☐
+- [ ] Diagrama de topologia + requisitos de rede
+- [ ] Protocolos/APIs definidos
+- Links dos artefatos:
+
+#### Unidade 2 ☐
+- [ ] Benchmarking (latência/vazão/erros) + painel de rede + plano de migração
+- Links dos artefatos:
+
+---
+
+## Status por Disciplina (atualizar semanalmente)
+
+| Disciplina | Entrega em foco | Status | Bloqueios | Próximo passo |
+|---|---|---|---|---|
+| POO | Entrega 01 | 🟢 | — | Iniciar implementação (Entrega 02) |
+| AED | Unidade 1 | 🔴/🟡/🟢 | | |
+| EST | Unidade 1 | 🔴/🟡/🟢 | | |
+| SO | Unidade 1 | 🔴/🟡/🟢 | | |
+| RSD | Unidade 1 | 🔴/🟡/🟢 | | |
+
+🟢 no prazo · 🟡 atenção · 🔴 bloqueado/atrasado
 
 ---
 
@@ -95,12 +204,21 @@ Gestão e distribuição de hemocomponentes na rede de sangue, inspirado no flux
 | Deploy/CI-CD deixado para o fim | Alto | |
 | Telemetria/painéis desconectados do app | Médio | |
 
-
 ---
 
-## Checkpoints de comunicação docente
+## Checkpoints de Comunicação Docente
 
 - Reunião quinzenal Projeto ↔ disciplinas técnicas: semanas 3, 5, 7, 9, 11, 13, 15
-- Checkpoint de integração U1: semana 8–9 | U2: semana 15–16
+- Checkpoint de integração U1: semana 8–9 · U2: semana 15–16
 
 ---
+
+## Estrutura de pastas sugerida no repositório
+
+```
+/docs
+  historias-usuario.md      # Histórias de usuário + critérios BDD (POO)
+  /prints                   # Prints do issue/bug tracker, telas etc.
+/src                         # Código-fonte da aplicação Spring Boot
+README.md                    # Este arquivo
+```
