@@ -1,7 +1,7 @@
 # Rota Vital — Gestão e Distribuição de Hemocomponentes na Rede de Sangue
 
 > Projeto Integrador — 3º Semestre ADS · Squad **Tuguy**
-> **Última atualização:** `31/08/2026 — Entrega 01 (POO)`
+> **Última atualização:** `11/08/2026 — Entrega 02 (POO)`
 
 ---
 
@@ -43,13 +43,13 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 
 | Integrante | Área/Papel no PI | E-mail (@cesar.school) |
 |---|---|---|
-| Vitória Gabrielly Silva | Líder, Desenvolvedora | `vggs@cesar.school` |
-| Pedro Pessoa de Albuquerque | Desenvolvedor | `ppan@cesar.school` |
-| Maria Larysse Yasmin Lira | Desenvolvedora | `mlylp@cesar.school` |
+| Ana Beatriz da Costa | Desenvolvedora | `abblc@cesar.school` |
+| Dilvanir Aline Alves de Melo | Desenvolvedora | `dacm@cesar.school` |
 | Emanoel Alesandro da Silva | Desenvolvedor | `eas3@cesar.school` |
 | Marcio Aureliano da Silva | Desenvolvedor | `maps@cesar.school` |
-| Dilvanir Aline Alves de Melo | Desenvolvedora | `dacm@cesar.school` |
-| Ana Beatriz da Costa | Desenvolvedora | `abblc@cesar.school` |
+| Maria Larysse Yasmin Lira | Desenvolvedora | `mlylp@cesar.school` |
+| Pedro Pessoa de Albuquerque | Desenvolvedor | `ppan@cesar.school` |
+| Vitória Gabrielly Silva | Líder, Desenvolvedora | `vggs@cesar.school` |
 
 **Membros anteriores / que saíram do grupo:** Nenhuma alteração até o momento.
 
@@ -96,10 +96,19 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 
 #### Entrega 02 — 21/09 ☐
 - [ ] Ao menos 2 histórias implementadas (com descrição formato POST-IT em "Histórias implementadas" abaixo)
+- [x] Modelo de domínio documentado (diagrama de classes) → [`docs/diagrama-classes.png`](./docs/diagrama-classes.png) · [fonte editável (.mmd)](./docs/diagrama-classes.mmd)
 - [ ] Commits frequentes (mínimo semanais) direto na `main`
 - [ ] Issue/bug tracker do GitHub atualizado (print anexado)
 - [ ] Screencast do sistema funcionando (uso) — link:
 - [ ] Screencast da explicação do código — link:
+
+**Modelo de domínio (entidades, atributos, relacionamentos e cardinalidade):**
+
+![Diagrama de classes — Rota Vital](./docs/diagrama-classes.png)
+
+- Fonte editável: [`docs/diagrama-classes.mmd`](./docs/diagrama-classes.mmd) — abra em [mermaid.live](https://mermaid.live) para ajustar.
+
+- Regras de negócio no formato regra → serviço/método → exceção → HU de origem: [`Regra de negócio — Rota Vital`](docs/regras-de-negocio.md)
 
 **Histórias implementadas nesta entrega:**
 *(preencher no formato: "Como [usuário], eu gostaria de [ação], para [valor]")*
@@ -214,10 +223,11 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 ---
 
 ## Estrutura de pastas sugerida no repositório
-
 ```
 /docs
   historias-usuario.md      # Histórias de usuário + critérios BDD (POO)
+  diagrama-classes.png      # Diagrama de classes do modelo de domínio (POO — U1)
+  diagrama-classes.mmd      # Código-fonte Mermaid do diagrama (editável)
   /prints                   # Prints do issue/bug tracker, telas etc.
 /src                         # Código-fonte da aplicação Spring Boot
 README.md                    # Este arquivo

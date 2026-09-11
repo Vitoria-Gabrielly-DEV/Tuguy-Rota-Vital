@@ -1,0 +1,59 @@
+classDiagram
+  class Usuario {
+    -String id
+    -String nome
+    -String emailCorporativo
+    -String senhaHash
+    -Perfil perfil
+    +autenticar() boolean
+    +cadastrar() Usuario
+  }
+  class Hospital {
+    -String id
+    -String nome
+    -String endereco
+    -String janelaEntregaPadrao
+  }
+  class Requisicao {
+    -String id
+    -String hospitalId
+    -TipoABORh tipoABORh
+    -Componente componente
+    -int quantidade
+    -StatusRequisicao status
+    -DateTime dataHora
+    +registrar() Requisicao
+    +atualizarStatus(StatusRequisicao) void
+  }
+  class Bolsa {
+    -String id
+    -TipoABORh tipoABORh
+    -Componente componente
+    -Date dataColeta
+    -Date dataValidade
+    -StatusBolsa status
+    +estaValida() boolean
+    +alocar() void
+    +descartar() void
+  }
+  class Estoque {
+    -String id
+    -TipoABORh tipoABORh
+    -Componente componente
+    -int quantidadeTotal
+    +consultarDisponibilidade() int
+    +atualizarQuantidade(int) void
+  }
+  class Doacao {
+    -String id
+    -Date dataDoacao
+    -TipoABORh tipoABORhColetado
+    -Componente componenteGerado
+    +registrarDoacao() Doacao
+    +gerarBolsa() Bolsa
+  }
+  Hospital "1" --> "0..*" Requisicao : solicita
+  Usuario "1" --> "0..*" Requisicao : registra
+  Requisicao "0..*" --> "0..*" Bolsa : aloca
+  Doacao "1" --> "0..*" Bolsa : origina
+  Bolsa "0..*" --> "1" Estoque : compoe
