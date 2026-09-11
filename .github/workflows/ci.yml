@@ -1,0 +1,30 @@
+name: CI Java Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+
+    - name: Configurar o Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        cache: 'maven'
+
+    - name: Dar permissao ao Maven Wrapper
+      run: chmod +x mvnw
+      working-directory: back-end/rotavital
+
+    - name: Compilar e testar com Maven
+      run: ./mvnw clean verify
+      working-directory: back-end/rotavital
