@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${user.id == null ? 'Novo usuário' : 'Editar usuário'}">Novo usuário</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page">
+        <h1 th:text="${user.id == null ? 'Novo usuário' : 'Editar usuário'}">Novo usuário</h1>
+
+        <section class="form-section">
+            <form class="user-form" th:action="@{/salvar}" th:object="${user}" method="post">
+                <input type="hidden" th:field="*{id}">
+
+                <div class="form-field">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" th:field="*{nome}" required>
+                    <small class="error" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" th:field="*{email}" required>
+                    <small class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" th:field="*{senha}" minlength="7" maxlength="20" pattern="[0-9]{7,20}" required>
+                    <small class="error" th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"></small>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button" type="submit">Salvar</button>
+                    <a class="button secondary" href="/login">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

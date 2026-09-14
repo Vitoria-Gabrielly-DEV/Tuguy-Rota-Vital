@@ -1,13 +1,13 @@
-package com.br.rotavital;
+package com.rotavital.tuguy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RotavitalApplication {
+public class TuguyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RotavitalApplication.class, args);
+		SpringApplication.run(TuguyApplication.class, args);
 	}
 
 }

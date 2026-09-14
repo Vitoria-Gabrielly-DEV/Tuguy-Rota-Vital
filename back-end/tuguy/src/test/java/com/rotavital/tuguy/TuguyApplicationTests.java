@@ -1,10 +1,10 @@
-package com.br.rotavital;
+package com.rotavital.tuguy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RotavitalApplicationTests {
+class TuguyApplicationTests {
 
 	@Test
 	void contextLoads() {
