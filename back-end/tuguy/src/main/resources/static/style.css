@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    padding: 24px;
+    color: #1f2937;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+}
+
+.page {
+    width: min(100%, 960px);
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+.users-section,
+.new-user,
+.form-section {
+    margin-bottom: 32px;
+}
+
+.form-section {
+    max-width: 560px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+.user-form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font: inherit;
+}
+
+input:focus {
+    border-color: #2563eb;
+    outline: 2px solid rgb(37 99 235 / 20%);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+button {
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.button.secondary {
+    color: #1f2937;
+    background: #e5e7eb;
+}
+
+.button.secondary:hover {
+    background: #d1d5db;
+}
+
+.error {
+    color: #b91c1c;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background: #e5e7eb;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.empty {
+    color: #6b7280;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    background: #2563eb;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background: #1d4ed8;
+}
+
+.button.remove {
+    background: #dc2626;
+}
+
+.button.remove:hover {
+    background: #b91c1c;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        margin-bottom: 24px;
+        font-size: 1.5rem;
+    }
+}
