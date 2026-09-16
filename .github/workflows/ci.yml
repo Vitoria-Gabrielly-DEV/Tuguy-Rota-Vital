@@ -21,10 +21,10 @@ jobs:
         java-version: '17'
         cache: 'maven'
 
-    - name: Dar permissao ao Maven Wrapper
+    - name: Dar permissão ao Maven Wrapper
       run: chmod +x mvnw
-      working-directory: back-end/rotavital
+      working-directory: back-end/tuguy
 
     - name: Compilar e testar com Maven
       run: ./mvnw clean verify
-      working-directory: back-end/rotavital
+      working-directory: back-end/tuguy
