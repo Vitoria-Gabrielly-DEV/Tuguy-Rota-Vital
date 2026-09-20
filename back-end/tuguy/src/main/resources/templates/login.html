@@ -3,47 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cadastro de usuários</title>
+	<title>Login</title>
 	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<main class="page">
-		<h1>Cadastro de usuários</h1>
+		<h1>Login</h1>
 
-		<section class="users-section">
-			<h2>Usuários cadastrados</h2>
+		<section class="form-section">
+			<form class="user-form" th:action="@{/login}" method="post">
+				<p class="error" th:if="${erro}" th:text="${erro}"></p>
 
-			<div class="table-wrapper">
-				<table>
-					<thead>
-						<tr>
-							<th>Nome</th>
-							<th>E-mail</th>
-							<th colspan="2">Ações</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="u : ${users}">
-							<td th:text="${u.nome}"></td>
-							<td th:text="${u.email}"></td>
-							<td>
-								<a class="button" th:href="@{/editar/{id}(id=${u.id})}">Alterar</a>
-							</td>
-							<td>
-								<a class="button remove" th:href="@{/remover/{id}(id=${u.id})}">Remover</a>
-							</td>
-						</tr>
-						<tr th:if="${#lists.isEmpty(users)}">
-							<td class="empty" colspan="4">Nenhum usuário cadastrado.</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
+				<div class="form-field">
+					<label for="email">E-mail</label>
+					<input id="email" name="email" type="email" autocomplete="email" required>
+				</div>
 
-		<section class="new-user">
-			<h2>Novo usuário</h2>
-			<a class="button" href="/cadastrar/">Cadastrar</a>
+				<div class="form-field">
+					<label for="senha">Senha</label>
+					<input id="senha" name="senha" type="password" autocomplete="current-password" required>
+				</div>
+
+				<div class="form-actions">
+					<button class="button" type="submit">Entrar</button>
+					<a class="button secondary" href="/cadastrar/">Criar conta</a>
+				</div>
+			</form>
 		</section>
 	</main>
 </body>

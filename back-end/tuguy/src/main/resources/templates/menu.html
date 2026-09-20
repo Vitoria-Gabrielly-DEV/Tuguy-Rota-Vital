@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro de usuários</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<main class="page">
+		<h1>Cadastro de usuários</h1>
+
+		<section class="users-section">
+			<h2>Usuários cadastrados</h2>
+
+			<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>E-mail</th>
+							<th colspan="2">Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="u : ${users}">
+							<td th:text="${u.nome}"></td>
+							<td th:text="${u.email}"></td>
+							<td>
+								<a class="button" th:href="@{/editar/{id}(id=${u.id})}">Alterar</a>
+							</td>
+							<td>
+								<a class="button remove" th:href="@{/remover/{id}(id=${u.id})}">Remover</a>
+							</td>
+						</tr>
+						<tr th:if="${#lists.isEmpty(users)}">
+							<td class="empty" colspan="4">Nenhum usuário cadastrado.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="new-user">
+			<h2>Novo usuário</h2>
+			<a class="button" href="/cadastrar/">Cadastrar</a>
+		</section>
+
+		<section class="users-section">
+			<h2>Requisições cadastradas</h2>
+
+			<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>Título</th>
+							<th>Descrição</th>
+							<th>Prioridade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="r : ${requisicoes}">
+							<td th:text="${r.titulo}"></td>
+							<td th:text="${r.descricao}"></td>
+							<td th:text="${r.prioridade}"></td>
+						</tr>
+						<tr th:if="${#lists.isEmpty(requisicoes)}">
+							<td class="empty" colspan="3">Nenhuma requisição cadastrada.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="new-user">
+			<h2>Requisições</h2>
+			<a class="button" href="/requisicoes">Criar requisição</a>
+		</section>
+	</main>
+</body>
+</html>

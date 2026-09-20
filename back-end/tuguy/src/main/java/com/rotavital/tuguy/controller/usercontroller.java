@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import com.rotavital.tuguy.model.user; 
+import com.rotavital.tuguy.service.requisicaoservice;
 import com.rotavital.tuguy.service.userservice;
 
 import jakarta.validation.Valid;
@@ -13,25 +14,46 @@ import jakarta.validation.Valid;
 public class usercontroller {
 
     private final userservice Service;
+    private final requisicaoservice RequisicaoService;
 
     // instância de ClienteService é injetada pelo Spring no controller
-    public usercontroller(userservice service) {
+    public usercontroller(userservice service, requisicaoservice requisicaoService) {
         this.Service = service;
+        this.RequisicaoService = requisicaoService;
     }
 
     @GetMapping("/login")
-    public String listar(Model model) {
-       
-	// empacota a lista de clientes em um model, para que a view 
-        // (arquivo HTML) possa acessar os dados.
-        model.addAttribute("users", Service.listarTodos());
-       
-
+    public String exibString(Model model) {
         // manda renderizar resources/templates/login.html
         // passando para esse html o model criado.
         return "login";
     }
 
+    @PostMapping("/login")
+    public String autenticar(@RequestParam String email, @RequestParam String senha, Model model){
+
+        user usuario = Service.autenticar(email, senha);
+
+        if (usuario != null){
+            return "redirect:/menu";
+        } 
+
+        model.addAttribute("erro", "email ou senha invalidos");
+        return "login";
+
+    }
+
+
+    @GetMapping("/menu")
+    public String listar(Model model) {
+
+        model.addAttribute("users", Service.listarTodos());
+        model.addAttribute("requisicoes", RequisicaoService.listarTodos());
+
+        // manda renderizar resources/templates/login.html
+        // passando para esse html o model criado.
+        return "menu";
+    }
 
     @PostMapping("/salvar")
     public String salvar(@Valid user user, BindingResult result) {

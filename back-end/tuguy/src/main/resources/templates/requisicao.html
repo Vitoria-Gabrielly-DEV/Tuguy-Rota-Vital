@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova requisição</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page">
+        <h1>Nova requisição</h1>
+
+        <section class="form-section">
+            <form class="user-form" th:action="@{/requisicoes}" th:object="${requisicao}" method="post">
+                <div class="form-field">
+                    <label for="titulo">Título</label>
+                    <input id="titulo" type="text" th:field="*{titulo}" required>
+                    <small class="error" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" th:field="*{descricao}" rows="5" required></textarea>
+                    <small class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" th:field="*{prioridade}" required>
+                        <option value="">Selecione uma prioridade</option>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                    <small class="error" th:if="${#fields.hasErrors('prioridade')}" th:errors="*{prioridade}"></small>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button" type="submit">Enviar requisição</button>
+                    <a class="button secondary" href="/menu">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
