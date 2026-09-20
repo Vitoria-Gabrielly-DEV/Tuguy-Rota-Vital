@@ -4,6 +4,7 @@ import com.rotavital.tuguy.model.user;
 import com.rotavital.tuguy.repository.userrepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service 
 public class userservice {
@@ -29,4 +30,20 @@ public class userservice {
     public void remover(Long id) {
         Repository.deleteById(id);
     }   
+
+    public user autenticar(String email, String senha){
+        Optional<user> usuarioEncontrado = Repository.findByEmail(email);
+
+        if (usuarioEncontrado.isPresent()){
+            user usuario = usuarioEncontrado.get();
+
+            if (usuario.getSenha().equals(senha)){
+                return usuario;
+            }
+        }
+
+        return null;
+
+
+    }
 }
