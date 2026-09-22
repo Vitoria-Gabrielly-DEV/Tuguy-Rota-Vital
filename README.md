@@ -26,16 +26,33 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 
 | Camada | Tecnologia |
 |---|---|
-| Backend | Java 17+, Spring Boot |
+| Backend | Java 21, Spring Boot |
 | Frontend | HTML, CSS, Thymeleaf |
 | Prototipação | Figma |
-| Banco de dados | *a definir* |
+| Banco de dados | H2 (arquivo local, via Spring Data JPA) |
 | Versionamento | Git / GitHub |
-| CI/CD | *a definir* |
+| CI/CD | GitHub Actions |
 
 ### Como rodar o projeto
 
-> Seção obrigatória a partir da **Entrega 02**. Será preenchida assim que a aplicação Spring Boot estiver com o primeiro CRUD funcional.
+**Pré-requisitos:** Java 21 (JDK). O Maven não precisa estar instalado — o projeto inclui o wrapper `mvnw`.
+
+1. Clone o repositório e entre na pasta do back-end:
+```bash
+   git clone https://github.com/Vitoria-Gabrielly-DEV/Tuguy-Rota-Vital.git
+   cd Tuguy-Rota-Vital/back-end/tuguy
+```
+2. Execute a aplicação:
+```bash
+   ./mvnw spring-boot:run
+```
+   (no Windows: `mvnw.cmd spring-boot:run`)
+
+3. Acesse **http://localhost:8080/login**
+
+4. Console do banco H2 (dados em `./data/users-db`): **http://localhost:8080/h2-console**
+   - JDBC URL: `jdbc:h2:file:./data/users-db`
+   - Usuário: `sa` · Senha: (em branco)
 
 ---
 
@@ -69,8 +86,8 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 | Semana | Foco | Disciplinas | Status |
 |---|---|---|---|
 | 1 | Kickoff do PI e organização das squads | Todas | ✅ |
-| 2–3 | Modelagem do domínio e escopo de dados/algoritmos | POO, AED, RSD | ☐ |
-| 4–5 | Setup de infraestrutura e início dos algoritmos | SO, RSD, AED | ☐ |
+| 2–3 | Modelagem do domínio e escopo de dados/algoritmos | POO, AED, RSD | ✅ |
+| 4–5 | Setup de infraestrutura e início dos algoritmos | SO, RSD, AED | ✅ |
 | 6–7 | Primeira sprint — convergência das entregas U1 | Todas | ☐ |
 | **8–9** | **Fechamento e checkpoint da Entrega U1** | Todas | ☐ |
 | 10–11 | Replanejamento U2 + compatibilidade/integração | POO, AED | ☐ |
@@ -95,12 +112,12 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 **Histórias mapeadas no protótipo:** HU08 (Login/Cadastro), HU01 (Estoque), Lista de Bolsas, Detalhe da Bolsa, Cadastro de Bolsa, Lista de Doações, Cadastro de Doação, Dashboard.
 
 #### Entrega 02 — 21/09 ☐
-- [ ] Ao menos 2 histórias implementadas (com descrição formato POST-IT em "Histórias implementadas" abaixo)
+- [x] Ao menos 2 histórias implementadas (com descrição formato POST-IT em "Histórias implementadas" abaixo)
 - [x] Modelo de domínio documentado (diagrama de classes) → [`docs/diagrama-classes.png`](./docs/diagrama-classes.png) · [fonte editável (.mmd)](./docs/diagrama-classes.mmd)
-- [ ] Commits frequentes (mínimo semanais) direto na `main`
+- [x] Commits frequentes (mínimo semanais) direto na `main`
 - [ ] Issue/bug tracker do GitHub atualizado (print anexado)
-- [ ] Screencast do sistema funcionando (uso) — link:
-- [ ] Screencast da explicação do código — link:
+- [x] Screencast do sistema funcionando (uso) —> [Acessar screencast](https://youtu.be/x03UCdjJq5I)
+- [x] Screencast da explicação do código —> [Acessar screencast](https://youtu.be/x03UCdjJq5I)
 
 **Modelo de domínio (entidades, atributos, relacionamentos e cardinalidade):**
 
@@ -112,6 +129,16 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 
 **Histórias implementadas nesta entrega:**
 *(preencher no formato: "Como [usuário], eu gostaria de [ação], para [valor]")*
+> **HU08 — Cadastrar e acessar o aplicativo**
+> Como usuário, eu gostaria de realizar meu cadastro utilizando meu e-mail de trabalho e acessar minha conta por meio de login, para que eu possa utilizar o aplicativo.
+
+> **HU02 — Registrar requisição hospitalar**
+> Como funcionário do hemocentro, eu gostaria de registrar requisições de hemocomponentes realizadas pelos hospitais, para que eu possa organizar o atendimento das solicitações.
+
+**Issue/bug tracker:**
+
+![Issues do projeto no GitHub](./docs/prints/issues-entrega-02.png)
+[Acessar Issues no GitHub](https://github.com/Vitoria-Gabrielly-DEV/Tuguy-Rota-Vital/issues)
 
 #### Entrega 03 — 19/10 ☐
 - [ ] Mais 2 histórias implementadas (descrição formato POST-IT abaixo)
