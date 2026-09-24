@@ -194,8 +194,12 @@ O sistema gerencia o estoque por tipo e componente, recebe requisições dos hos
 
 #### Unidade 1 ☐
 - [ ] Pipeline CI/CD + primeiro deploy
-- [ ] Threads em processo real
+- [x] Threads em processo real — ordenação de requisições por prioridade (sequencial × threads × virtual threads)
 - Links dos artefatos:
+  - Serviço: [`ordenacaorequisicaoservice.java`](./back-end/tuguy/src/main/java/com/rotavital/tuguy/ordenacao/ordenacaorequisicaoservice.java)
+  - Endpoint REST: [`ordenacaocontroller.java`](./back-end/tuguy/src/main/java/com/rotavital/tuguy/controller/ordenacaocontroller.java)
+  - Como rodar o benchmark: [`docs/como-rodar-benchmark-ordenacao.md`](./docs/como-rodar-benchmark-ordenacao.md)
+  - Análise (Big-O, threads, Amdahl): [`docs/analise-ordenacao-threads.md`](./docs/analise-ordenacao-threads.md)
 
 #### Unidade 2 ☐
 - [ ] Arquitetura em 3 cenários + orçamento + sincronização
