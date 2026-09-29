@@ -46,31 +46,38 @@
 			<a class="button" href="/cadastrar/">Cadastrar</a>
 		</section>
 
-		<section class="users-section">
-			<h2>Requisições cadastradas</h2>
+<section class="users-section">
+    <h2>Requisições cadastradas</h2>
 
-			<div class="table-wrapper">
-				<table>
-					<thead>
-						<tr>
-							<th>Título</th>
-							<th>Descrição</th>
-							<th>Prioridade</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="r : ${requisicoes}">
-							<td th:text="${r.titulo}"></td>
-							<td th:text="${r.descricao}"></td>
-							<td th:text="${r.prioridade}"></td>
-						</tr>
-						<tr th:if="${#lists.isEmpty(requisicoes)}">
-							<td class="empty" colspan="3">Nenhuma requisição cadastrada.</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Prioridade</th>
+                    <th colspan="2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="r : ${requisicoes}">
+                    <td th:text="${r.titulo}"></td>
+                    <td th:text="${r.descricao}"></td>
+                    <td th:text="${r.prioridade}"></td>
+                    <td>
+                        <a class="button" th:href="@{/requisicoes/editar/{id}(id=${r.id})}">Alterar</a>
+                    </td>
+                    <td>
+                        <a class="button remove" th:href="@{/requisicoes/remover/{id}(id=${r.id})}">Remover</a>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(requisicoes)}">
+                    <td class="empty" colspan="5">Nenhuma requisição cadastrada.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 		<section class="new-user">
 			<h2>Requisições</h2>
