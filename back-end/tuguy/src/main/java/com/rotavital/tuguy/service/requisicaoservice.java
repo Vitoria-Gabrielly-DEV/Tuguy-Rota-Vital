@@ -21,4 +21,13 @@ public class requisicaoservice {
     public List<requisicao> listarTodos() {
         return Repository.findAll();
     }
+    // Novo - Busca uma requisição específica pelo id, para preencher o formulário de edição
+    public requisicao buscarPorId(Long id) {
+        return Repository.findById(id).orElse(null);
+    }
+
+    // Novo — remove a requisição do banco
+    public void remover(Long id) {
+        Repository.deleteById(id);
+    }
 }
