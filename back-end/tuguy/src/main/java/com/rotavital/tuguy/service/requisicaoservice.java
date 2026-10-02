@@ -9,6 +9,7 @@ import java.util.List;
 public class requisicaoservice {
 
     private final requisicaorepository Repository;
+    private final FilaRequisicoes fila = new FilaRequisicoes();
 
     public requisicaoservice(requisicaorepository Repository) {
         this.Repository = Repository;
@@ -20,5 +21,13 @@ public class requisicaoservice {
 
     public List<requisicao> listarTodos() {
         return Repository.findAll();
+    }
+
+    public requisicao consultarProxima() {
+        return fila.consultarInicio();
+    }
+
+    public requisicao retirarProxima() {
+        return fila.desenfileirar();
     }
 }
