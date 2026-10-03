@@ -1,0 +1,44 @@
+DOCUMENTO DE EQUIVALENCIA - FILA DE REQUISICOES
+
+As implementacoes em C e Java representam uma fila encadeada de requisições e
+seguem a regra FIFO (First In, First Out): a primeira requisicao adicionada é a
+primeira que pode ser retirada, a prioridade nao altera essa ordem.
+
+sobre a estrutura da fila
+
+em c++ é necessario que uma struct do tipo requisição seja criada para definir 
+os valores que serão gravados, mas em java isso não é necessario pois o model 
+"requisicao" ja foi importado da pasta de models. a definição do nó segue a mesma
+estrutura em ambas as versões, e a definição de uma struct fila é desnecessaria 
+em java porque a propia classe filaRequisicoes ja cumpre esse papel
+
+sobre os metodos
+
+"filaVazia" em c+ tem como equivalente "estaVazia" em java, e elas são
+simples e parecidas
+
+"inicializarFila" por outro lado não tem uma contraparte em java pois ao criar 
+um "new filaRequisicoes" o objeto já é iniciado (inicio e fim ja começam como null)
+
+"enfileirar" segue a mesma logica nas duas versoes. Em C, "malloc" reserva
+memoria; em Java, "new No(requisicao)" cria o no. Se a fila estiver vazia, ele
+se torna inicio e fim. Caso contrario, o antigo fim aponta para o novo no e fim
+e atualizado. A requisicao entra no final, preservando a ordem.
+
+"desenfileirar" remove o no do inicio e avanca inicio. Se a fila ficar vazia,
+fim tambem e atualizado. Em C, retorna 0 se vazia, copia a requisicao para o
+parametro de saida e libera o no com "free". Em Java, retorna null se vazia e
+devolve o objeto retirado; a memoria e gerenciada automaticamente. C usa
+"inicializarFila"; os campos Java comecam como null.
+
+sobre o uso das versões
+
+a versão em c++ tem um main e funções de imprimir com o proposito de teste, a versão em java
+não tem pois sua funcionalidade deve ser ligada ao jpa e o banco. Por enquanto, a fila
+de requisição em java apenas salva a fila na memoria, significando que após reiniciar o sistema
+ela será perdida, mas a proxima atualização que essa função receberá será uma maneira de
+"salvar" o estado atual da fila antes de fechar o sistema e depois recriar ele (ou carregar "load")
+
+aviso sobre a entrega
+por enquanto tem apenas duas historias de usuario implementadas, o login e o registro de requisições
+e portanto não há uma lista de bolsas para criar, mas no futuro proximo (proxima sprint) haverá
