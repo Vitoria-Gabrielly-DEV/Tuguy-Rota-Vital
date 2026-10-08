@@ -10,11 +10,11 @@ em c++ é necessario que uma struct do tipo requisição seja criada para defini
 os valores que serão gravados, mas em java isso não é necessario pois o model 
 "requisicao" ja foi importado da pasta de models. a definição do nó segue a mesma
 estrutura em ambas as versões, e a definição de uma struct fila é desnecessaria 
-em java porque a propia classe filaRequisicoes ja cumpre esse papel
+em java porque a própria classe filaRequisicoes ja cumpre esse papel
 
 sobre os metodos
 
-"filaVazia" em c+ tem como equivalente "estaVazia" em java, e elas são
+"filaVazia" em c++ tem como equivalente "estaVazia" em java, e elas são
 simples e parecidas
 
 "inicializarFila" por outro lado não tem uma contraparte em java pois ao criar 
@@ -34,11 +34,5 @@ devolve o objeto retirado; a memoria e gerenciada automaticamente. C usa
 sobre o uso das versões
 
 a versão em c++ tem um main e funções de imprimir com o proposito de teste, a versão em java
-não tem pois sua funcionalidade deve ser ligada ao jpa e o banco. Por enquanto, a fila
-de requisição em java apenas salva a fila na memoria, significando que após reiniciar o sistema
-ela será perdida, mas a proxima atualização que essa função receberá será uma maneira de
-"salvar" o estado atual da fila antes de fechar o sistema e depois recriar ele (ou carregar "load")
+não tem pois sua funcionalidade deve ser ligada ao jpa e o banco.
 
-aviso sobre a entrega
-por enquanto tem apenas duas historias de usuario implementadas, o login e o registro de requisições
-e portanto não há uma lista de bolsas para criar, mas no futuro proximo (proxima sprint) haverá

@@ -23,6 +23,11 @@ public class requisicaoservice {
         return Repository.findAll();
     }
 
+    public requisicao buscarPorId(Long id) {
+        return Repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Requisição não encontrada com o id: " + id));
+    }
+
     public requisicao consultarProxima() {
         return fila.consultarInicio();
     }
